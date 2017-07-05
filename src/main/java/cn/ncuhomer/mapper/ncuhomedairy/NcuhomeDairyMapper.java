@@ -13,6 +13,6 @@ import java.util.List;
 @Mapper
 public interface NcuhomeDairyMapper {
 
-    @Select("select * from wp_blog_posts where post_status='publish' and post_type='post' order by post_modified desc limit 3")
+    @Select("select ID, post_title, post_modified from wp_blog_posts where post_status='publish' and post_type='post' order by post_modified desc limit 3")
     public List<NcuhomeDairy> selectByCondition();
 }

@@ -1,7 +1,6 @@
 package cn.ncuhomer.controller;
 
 import cn.ncuhomer.domain.NcuhomeBlog;
-import cn.ncuhomer.mapper.ncuhomenlog.NcuhomeBlogMapper;
 import cn.ncuhomer.service.NcuhomeBlogService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

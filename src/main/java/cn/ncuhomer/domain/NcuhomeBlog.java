@@ -6,9 +6,9 @@ import java.time.LocalDateTime;
  */
 public class NcuhomeBlog {
     private Integer id;
-    private String slug;
+    private String url;
     private String title;
-    private String html;
+    private String cover;
     private NcuhomeBlogUser ncuhomeBlogUser;
     private LocalDateTime updated_at;
 
@@ -44,19 +44,19 @@ public class NcuhomeBlog {
         this.updated_at = updated_at;
     }
 
-    public String getSlug() {
-        return slug;
+    public String getUrl() {
+        return url;
     }
 
-    public void setSlug(String slug) {
-        this.slug = slug;
+    public void setUrl(String url) {
+        this.url = url;
     }
 
-    public String getHtml() {
-        return html;
+    public String getCover() {
+        return cover;
     }
 
-    public void setHtml(String html) {
-        this.html = html;
+    public void setCover(String cover) {
+        this.cover = cover;
     }
 }
