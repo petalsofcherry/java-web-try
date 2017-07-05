@@ -2,7 +2,6 @@ package cn.ncuhomer.controller;
 
 import cn.ncuhomer.domain.NcuhomeDairy;
 import cn.ncuhomer.domain.Result;
-import cn.ncuhomer.mapper.ncuhomedairy.NcuhomeDairyMapper;
 import cn.ncuhomer.service.NcuhomeDairyService;
 import cn.ncuhomer.utils.ResultUtils;
 import org.springframework.beans.factory.annotation.Autowired;
