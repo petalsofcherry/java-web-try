@@ -4,6 +4,8 @@ import com.alibaba.druid.pool.DruidDataSource;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -11,6 +13,7 @@ import org.springframework.context.annotation.Primary;
 
 import javax.sql.DataSource;
 import javax.validation.constraints.NotNull;
+import java.lang.invoke.MethodHandles;
 
 /**
  * Created by luojingyu on 17-7-5.
@@ -19,6 +22,7 @@ import javax.validation.constraints.NotNull;
 @ConfigurationProperties("spring.datasource.ncuhomedairy")
 @MapperScan(basePackages = "cn.petalsofcherry.mapper.ncuhomedairy")
 public class NcuhomeDairyDatasSourceConfig {
+    private static final Logger log = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
     @NotNull
     private String username;

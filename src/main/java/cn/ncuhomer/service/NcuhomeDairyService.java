@@ -5,6 +5,8 @@ import cn.ncuhomer.mapper.ncuhomedairy.NcuhomeDairyMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -18,6 +20,15 @@ public class NcuhomeDairyService {
     private NcuhomeDairyMapper ncuhomeDairyMapper;
 
     public List<NcuhomeDairy> getNcuhomeDairyResult() {
-        return ncuhomeDairyMapper.selectByCondition();
+        List<NcuhomeDairy> preResult = ncuhomeDairyMapper.selectByCondition();
+        for (NcuhomeDairy ncuhomeDairy: preResult) {
+            ncuhomeDairy.setUrl(generateUrl(ncuhomeDairy.getUrl()));
+        }
+        return preResult;
+    }
+
+    private String generateUrl(String id) {
+        String preffix = "http://org.ncuhome.cn/?p=";
+        return preffix.concat(id);
     }
 }

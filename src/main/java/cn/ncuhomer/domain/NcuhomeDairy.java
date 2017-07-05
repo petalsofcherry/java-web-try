@@ -1,36 +1,35 @@
 package cn.ncuhomer.domain;
 
-import java.time.LocalDateTime;
 
 /**
  * Created by luojingyu on 17-7-5.
  */
 public class NcuhomeDairy {
-    private Integer ID;
-    private String post_title;
-    private LocalDateTime post_modified;
+    private String url;
+    private String title;
+    private String time;
 
-    public Integer getID() {
-        return ID;
+    public String getUrl() {
+        return url;
     }
 
-    public void setID(Integer ID) {
-        this.ID = ID;
+    public void setUrl(String url) {
+        this.url = url;
     }
 
-    public String getPost_title() {
-        return post_title;
+    public String getTitle() {
+        return title;
     }
 
-    public void setPost_title(String post_title) {
-        this.post_title = post_title;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public LocalDateTime getPost_modified() {
-        return post_modified;
+    public String getTime() {
+        return time;
     }
 
-    public void setPost_modified(LocalDateTime post_modified) {
-        this.post_modified = post_modified;
+    public void setTime(String time) {
+        this.time = time;
     }
 }

@@ -1,7 +1,5 @@
 package cn.ncuhomer.domain;
 
-import java.sql.Timestamp;
-
 /**
  * Created by luojingyu on 17-7-5.
  */
@@ -11,7 +9,7 @@ public class NcuhomeBlog {
     private String title;
     private String cover;
     private NcuhomeBlogUser ncuhomeBlogUser;
-    private Timestamp updated_at;
+    private String time;
 
     public Integer getId() {
         return id;
@@ -53,11 +51,11 @@ public class NcuhomeBlog {
         this.cover = cover;
     }
 
-    public Timestamp getUpdated_at() {
-        return updated_at;
+    public String getTime() {
+        return time;
     }
 
-    public void setUpdated_at(Timestamp updated_at) {
-        this.updated_at = updated_at;
+    public void setTime(String time) {
+        this.time = time;
     }
 }

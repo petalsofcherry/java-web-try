@@ -5,7 +5,7 @@ package cn.ncuhomer.domain;
  */
 public class Result<T> {
 
-    private Integer code;
+    private Integer status;
 
     private String msg;
 
@@ -15,22 +15,14 @@ public class Result<T> {
 
     }
 
-    public Result(Integer code, String msg) {
-        this(code, msg, null);
+    public Result(Integer status, String msg) {
+        this(status, msg, null);
     }
 
-    public Result(Integer code, String msg, T data) {
-        this.code = code;
+    public Result(Integer status, String msg, T data) {
+        this.status = status;
         this.msg = msg;
         this.data = data;
-    }
-
-    public Integer getCode() {
-        return code;
-    }
-
-    public void setCode(Integer code) {
-        this.code = code;
     }
 
     public String getMsg() {
@@ -47,5 +39,13 @@ public class Result<T> {
 
     public void setData(T data) {
         this.data = data;
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
     }
 }
