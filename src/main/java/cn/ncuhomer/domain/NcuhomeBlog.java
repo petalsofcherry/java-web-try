@@ -1,5 +1,6 @@
 package cn.ncuhomer.domain;
-import java.time.LocalDateTime;
+
+import java.sql.Timestamp;
 
 /**
  * Created by luojingyu on 17-7-5.
@@ -10,7 +11,7 @@ public class NcuhomeBlog {
     private String title;
     private String cover;
     private NcuhomeBlogUser ncuhomeBlogUser;
-    private LocalDateTime updated_at;
+    private Timestamp updated_at;
 
     public Integer getId() {
         return id;
@@ -36,14 +37,6 @@ public class NcuhomeBlog {
         this.ncuhomeBlogUser = ncuhomeBlogUser;
     }
 
-    public LocalDateTime getUpdated_at() {
-        return updated_at;
-    }
-
-    public void setUpdated_at(LocalDateTime updated_at) {
-        this.updated_at = updated_at;
-    }
-
     public String getUrl() {
         return url;
     }
@@ -58,5 +51,13 @@ public class NcuhomeBlog {
 
     public void setCover(String cover) {
         this.cover = cover;
+    }
+
+    public Timestamp getUpdated_at() {
+        return updated_at;
+    }
+
+    public void setUpdated_at(Timestamp updated_at) {
+        this.updated_at = updated_at;
     }
 }

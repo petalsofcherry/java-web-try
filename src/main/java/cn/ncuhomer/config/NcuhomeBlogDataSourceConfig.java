@@ -21,7 +21,6 @@ import java.lang.invoke.MethodHandles;
 @ConfigurationProperties("spring.datasource.ncuhomeblog")
 @MapperScan(basePackages = "cn.petalsofcherry.mapper.ncuhomeblog", sqlSessionFactoryRef = "ncuhomeblogSessionFactory")
 public class NcuhomeBlogDataSourceConfig {
-    private static final Logger log = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
     @NotNull
     private String username;
@@ -57,7 +56,7 @@ public class NcuhomeBlogDataSourceConfig {
     }
 
     @Bean
-    public DataSource problemDataSource() {
+    public DataSource ncuhomeBlogDataSource() {
         DruidDataSource dataSource = new DruidDataSource();
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");
         dataSource.setUrl(url);
@@ -77,7 +76,7 @@ public class NcuhomeBlogDataSourceConfig {
         ibatisConfiguration.setMapUnderscoreToCamelCase(true);
         sqlSessionFactoryBean.setConfiguration(ibatisConfiguration);
 
-        sqlSessionFactoryBean.setDataSource(problemDataSource());
+        sqlSessionFactoryBean.setDataSource(ncuhomeBlogDataSource());
         return sqlSessionFactoryBean.getObject();
     }
 

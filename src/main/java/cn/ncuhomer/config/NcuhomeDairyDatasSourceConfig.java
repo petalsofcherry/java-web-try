@@ -23,8 +23,6 @@ import java.lang.invoke.MethodHandles;
 @MapperScan(basePackages = "cn.petalsofcherry.mapper.ncuhomedairy")
 public class NcuhomeDairyDatasSourceConfig {
 
-    private static final Logger log = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
-
     @NotNull
     private String username;
 
@@ -60,7 +58,7 @@ public class NcuhomeDairyDatasSourceConfig {
 
     @Bean
     @Primary
-    public DataSource tianguohuaDataSource() {
+    public DataSource ncuhomeDairyDataSource() {
         DruidDataSource dataSource = new DruidDataSource();
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");
         dataSource.setUrl(url);
@@ -81,7 +79,7 @@ public class NcuhomeDairyDatasSourceConfig {
         ibatisConfiguration.setMapUnderscoreToCamelCase(true);
         sqlSessionFactoryBean.setConfiguration(ibatisConfiguration);
 
-        sqlSessionFactoryBean.setDataSource(tianguohuaDataSource());
+        sqlSessionFactoryBean.setDataSource(ncuhomeDairyDataSource());
         return sqlSessionFactoryBean.getObject();
     }
 }

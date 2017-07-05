@@ -12,7 +12,7 @@ import java.util.List;
  * Created by luojingyu on 17-7-5.
  */
 @Mapper
-public interface    NcuhomeBlogMapper {
+public interface NcuhomeBlogMapper {
 
     @Select("select p.title, p.slug, p.html, p.updated_at, u.name from posts p left join users u on u.id=p.created_by order by p.updated_at desc limit 1")
     @Results({
