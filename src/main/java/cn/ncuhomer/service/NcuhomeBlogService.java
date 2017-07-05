@@ -20,7 +20,7 @@ public class NcuhomeBlogService {
     public List<NcuhomeBlog> getNcuhomeBlogResult() {
         List<NcuhomeBlog> preResult = ncuhomeBlogMapper.selectByCondition();
         for (NcuhomeBlog nchomeblog: preResult) {
-            nchomeblog.setUrl(getCover(nchomeblog.getUrl()));
+            nchomeblog.setCover(getCover(nchomeblog.getCover()));
         }
         return preResult;
     }

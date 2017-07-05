@@ -19,8 +19,8 @@ public interface NcuhomeBlogMapper {
             @Result(property = "title", column = "title"),
             @Result(property = "url", column = "slug"),
             @Result(property = "cover", column = "html"),
-            @Result(property = "updated_at", column = "updated_at"),
-            @Result(property = "name", column = "name")
+            @Result(property = "time", column = "updated_at"),
+            @Result(property = "author", column = "name")
     })
     public List<NcuhomeBlog> selectByCondition();
 }

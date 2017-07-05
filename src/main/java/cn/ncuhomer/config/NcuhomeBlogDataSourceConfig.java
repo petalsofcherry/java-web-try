@@ -20,7 +20,7 @@ import java.lang.invoke.MethodHandles;
  */
 @Configuration
 @ConfigurationProperties("spring.datasource.ncuhomeblog")
-@MapperScan(basePackages = "cn.petalsofcherry.mapper.ncuhomeblog", sqlSessionFactoryRef = "ncuhomeblogSessionFactory")
+@MapperScan(basePackages = "cn.ncuhomer.mapper.ncuhomeblog", sqlSessionFactoryRef = "ncuhomeblogSessionFactory")
 public class NcuhomeBlogDataSourceConfig {
     private static final Logger log = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 

@@ -8,7 +8,7 @@ public class NcuhomeBlog {
     private String url;
     private String title;
     private String cover;
-    private NcuhomeBlogUser ncuhomeBlogUser;
+    private NcuhomeBlogUser author;
     private String time;
 
     public Integer getId() {
@@ -25,14 +25,6 @@ public class NcuhomeBlog {
 
     public void setTitle(String title) {
         this.title = title;
-    }
-
-    public NcuhomeBlogUser getNcuhomeBlogUser() {
-        return ncuhomeBlogUser;
-    }
-
-    public void setNcuhomeBlogUser(NcuhomeBlogUser ncuhomeBlogUser) {
-        this.ncuhomeBlogUser = ncuhomeBlogUser;
     }
 
     public String getUrl() {
@@ -57,5 +49,13 @@ public class NcuhomeBlog {
 
     public void setTime(String time) {
         this.time = time;
+    }
+
+    public NcuhomeBlogUser getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(NcuhomeBlogUser author) {
+        this.author = author;
     }
 }
