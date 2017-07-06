@@ -1,6 +1,7 @@
 package cn.ncuhomer.service;
 
 import cn.ncuhomer.domain.NcuhomeBlog;
+import cn.ncuhomer.domain.NcuhomeBlogUser;
 import cn.ncuhomer.mapper.ncuhomeblog.NcuhomeBlogMapper;
 import org.jsoup.Jsoup;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +28,10 @@ public class NcuhomeBlogService {
 
     private String getCover(String html) {
         org.jsoup.nodes.Document doc = Jsoup.parse(html);
-        org.jsoup.nodes.Element link = doc.select("alt='cover").first();
+        org.jsoup.nodes.Element link = doc.select("img[alt='cover']").first();
+        if (link == null) {
+            return null;
+        }
         String coverlink = link.attr("src");
         return coverlink;
     }

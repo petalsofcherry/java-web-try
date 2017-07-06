@@ -4,20 +4,12 @@ package cn.ncuhomer.domain;
  * Created by luojingyu on 17-7-5.
  */
 public class NcuhomeBlog {
-    private Integer id;
     private String url;
     private String title;
     private String cover;
     private NcuhomeBlogUser author;
+    private Integer created_by;
     private String time;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     public String getTitle() {
         return title;
@@ -57,5 +49,13 @@ public class NcuhomeBlog {
 
     public void setAuthor(NcuhomeBlogUser author) {
         this.author = author;
+    }
+
+    public Integer getCreated_by() {
+        return created_by;
+    }
+
+    public void setCreated_by(Integer created_by) {
+        this.created_by = created_by;
     }
 }

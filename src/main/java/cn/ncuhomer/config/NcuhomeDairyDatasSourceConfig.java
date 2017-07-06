@@ -20,7 +20,7 @@ import java.lang.invoke.MethodHandles;
  */
 @Configuration
 @ConfigurationProperties("spring.datasource.ncuhomedairy")
-@MapperScan(basePackages = "cn.ncuhomer.mapper.ncuhomedairy")
+@MapperScan(basePackages = "cn.ncuhomer.mapper.ncuhomedairy", sqlSessionFactoryRef = "ncuhomedairySessionFactory")
 public class NcuhomeDairyDatasSourceConfig {
     private static final Logger log = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
@@ -58,7 +58,6 @@ public class NcuhomeDairyDatasSourceConfig {
     }
 
     @Bean
-    @Primary
     public DataSource ncuhomeDairyDataSource() {
         DruidDataSource dataSource = new DruidDataSource();
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");
@@ -68,8 +67,7 @@ public class NcuhomeDairyDatasSourceConfig {
         return dataSource;
     }
 
-    @Bean
-    @Primary
+    @Bean(name = "ncuhomedairySessionFactory")
     public SqlSessionFactory sqlSessionFactoryBean() throws Exception {
 
         SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();

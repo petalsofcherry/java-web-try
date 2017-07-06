@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 
 import javax.sql.DataSource;
 import javax.validation.constraints.NotNull;
@@ -20,7 +21,7 @@ import java.lang.invoke.MethodHandles;
  */
 @Configuration
 @ConfigurationProperties("spring.datasource.ncuhomeblog")
-@MapperScan(basePackages = "cn.ncuhomer.mapper.ncuhomeblog", sqlSessionFactoryRef = "ncuhomeblogSessionFactory")
+@MapperScan(basePackages = "cn.ncuhomer.mapper.ncuhomeblog*")
 public class NcuhomeBlogDataSourceConfig {
     private static final Logger log = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
@@ -58,6 +59,7 @@ public class NcuhomeBlogDataSourceConfig {
     }
 
     @Bean
+    @Primary
     public DataSource ncuhomeBlogDataSource() {
         DruidDataSource dataSource = new DruidDataSource();
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");
@@ -67,7 +69,8 @@ public class NcuhomeBlogDataSourceConfig {
         return dataSource;
     }
 
-    @Bean(name = "ncuhomeblogSessionFactory")
+    @Bean
+    @Primary
     public SqlSessionFactory sqlSessionFactoryBean() throws Exception {
 
         SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();

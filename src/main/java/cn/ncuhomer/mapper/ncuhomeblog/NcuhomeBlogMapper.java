@@ -1,10 +1,8 @@
 package cn.ncuhomer.mapper.ncuhomeblog;
 
 import cn.ncuhomer.domain.NcuhomeBlog;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Result;
-import org.apache.ibatis.annotations.Results;
-import org.apache.ibatis.annotations.Select;
+import cn.ncuhomer.domain.NcuhomeBlogUser;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
@@ -14,13 +12,13 @@ import java.util.List;
 @Mapper
 public interface NcuhomeBlogMapper {
 
-    @Select("select p.title, p.slug, p.html, p.updated_at, u.name from posts p left join users u on u.id=p.created_by order by p.updated_at desc limit 1")
+    @Select("select title, slug, html, updated_at, created_by from posts order by updated_at desc limit 1")
     @Results({
             @Result(property = "title", column = "title"),
             @Result(property = "url", column = "slug"),
             @Result(property = "cover", column = "html"),
             @Result(property = "time", column = "updated_at"),
-            @Result(property = "author", column = "name")
+            @Result(property = "author", column = "id", one = @One(select = "cn.ncuhomer.mapper.ncuhomebloguser.NcuhomeBlogUserMapper.findById"))
     })
     public List<NcuhomeBlog> selectByCondition();
 }
