@@ -22,6 +22,7 @@ public class NcuhomeBlogService {
         List<NcuhomeBlog> preResult = ncuhomeBlogMapper.selectByCondition();
         for (NcuhomeBlog nchomeblog: preResult) {
             nchomeblog.setCover(getCover(nchomeblog.getCover()));
+            nchomeblog.setUrl(getUrl(nchomeblog.getUrl()));
         }
         return preResult;
     }
@@ -34,5 +35,9 @@ public class NcuhomeBlogService {
         }
         String coverlink = link.attr("src");
         return coverlink;
+    }
+
+    private String getUrl(String url) {
+        return "http://blog.ncuos.com/" + url;
     }
 }

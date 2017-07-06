@@ -9,7 +9,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
 
 import javax.sql.DataSource;
 import javax.validation.constraints.NotNull;
@@ -19,9 +18,9 @@ import java.lang.invoke.MethodHandles;
  * Created by luojingyu on 17-7-5.
  */
 @Configuration
-@ConfigurationProperties("spring.datasource.ncuhomedairy")
-@MapperScan(basePackages = "cn.ncuhomer.mapper.ncuhomedairy", sqlSessionFactoryRef = "ncuhomedairySessionFactory")
-public class NcuhomeDairyDatasSourceConfig {
+@ConfigurationProperties("spring.datasource.ncuhomediary")
+@MapperScan(basePackages = "cn.ncuhomer.mapper.ncuhomediary", sqlSessionFactoryRef = "ncuhomediarySessionFactory")
+public class NcuhomeDiaryDatasSourceConfig {
     private static final Logger log = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
     @NotNull
@@ -67,7 +66,7 @@ public class NcuhomeDairyDatasSourceConfig {
         return dataSource;
     }
 
-    @Bean(name = "ncuhomedairySessionFactory")
+    @Bean(name = "ncuhomediarySessionFactory")
     public SqlSessionFactory sqlSessionFactoryBean() throws Exception {
 
         SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();

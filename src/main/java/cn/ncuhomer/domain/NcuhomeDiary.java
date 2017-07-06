@@ -4,7 +4,7 @@ package cn.ncuhomer.domain;
 /**
  * Created by luojingyu on 17-7-5.
  */
-public class NcuhomeDairy {
+public class NcuhomeDiary {
     private String url;
     private String title;
     private String time;

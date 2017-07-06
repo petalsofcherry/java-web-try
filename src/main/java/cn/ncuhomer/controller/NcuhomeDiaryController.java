@@ -1,8 +1,8 @@
 package cn.ncuhomer.controller;
 
-import cn.ncuhomer.domain.NcuhomeDairy;
+import cn.ncuhomer.domain.NcuhomeDiary;
 import cn.ncuhomer.domain.Result;
-import cn.ncuhomer.service.NcuhomeDairyService;
+import cn.ncuhomer.service.NcuhomeDiaryService;
 import cn.ncuhomer.utils.ResultUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,14 +14,14 @@ import java.util.List;
  * Created by luojingyu on 17-7-5.
  */
 @RestController
-public class NcuhomeDairyController {
+public class NcuhomeDiaryController {
 
     @Autowired
-    private NcuhomeDairyService ncuhomeDairyService;
+    private NcuhomeDiaryService ncuhomeDiaryService;
 
-    @GetMapping("/ncuhomedairy")
-    public Result<List<NcuhomeDairy>> getNcuhomeDairy() {
-        return ResultUtils.success(ncuhomeDairyService.getNcuhomeDairyResult());
+    @GetMapping("/ncuhomediary")
+    public Result<List<NcuhomeDiary>> getNcuhomeDairy() {
+        return ResultUtils.success(ncuhomeDiaryService.getNcuhomeDiaryResult());
     }
 
 }

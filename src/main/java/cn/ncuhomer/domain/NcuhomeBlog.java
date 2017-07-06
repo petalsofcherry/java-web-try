@@ -8,7 +8,6 @@ public class NcuhomeBlog {
     private String title;
     private String cover;
     private NcuhomeBlogUser author;
-    private Integer created_by;
     private String time;
 
     public String getTitle() {
@@ -51,11 +50,4 @@ public class NcuhomeBlog {
         this.author = author;
     }
 
-    public Integer getCreated_by() {
-        return created_by;
-    }
-
-    public void setCreated_by(Integer created_by) {
-        this.created_by = created_by;
-    }
 }
