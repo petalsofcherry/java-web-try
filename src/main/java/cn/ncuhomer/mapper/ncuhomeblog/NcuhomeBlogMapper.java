@@ -7,12 +7,13 @@ import org.apache.ibatis.annotations.*;
 import java.util.List;
 
 /**
+ * 博客文章映射文件
  * Created by luojingyu on 17-7-5.
  */
 @Mapper
 public interface NcuhomeBlogMapper {
 
-    @Select("select * from posts order by updated_at desc limit 3")
+    @Select("select * from posts order by updated_at desc limit 4")
     @Results({
             @Result(property = "title", column = "title"),
             @Result(property = "url", column = "slug"),

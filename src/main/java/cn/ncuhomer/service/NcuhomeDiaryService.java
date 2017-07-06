@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 /**
+ * 获得家园志的地址
  * Created by luojingyu on 17-7-5.
  */
 
@@ -21,6 +22,7 @@ public class NcuhomeDiaryService {
         List<NcuhomeDiary> preResult = ncuhomeDiaryMapper.selectByCondition();
         for (NcuhomeDiary ncuhomeDiary : preResult) {
             ncuhomeDiary.setUrl(generateUrl(ncuhomeDiary.getUrl()));
+            ncuhomeDiary.setTime(ncuhomeDiary.getTime().substring(0,19));
         }
         return preResult;
     }

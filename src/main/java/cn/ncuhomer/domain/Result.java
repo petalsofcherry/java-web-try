@@ -1,6 +1,7 @@
 package cn.ncuhomer.domain;
 
 /**
+ * 结果集实体类
  * Created by luojingyu on 17-7-5.
  */
 public class Result<T> {

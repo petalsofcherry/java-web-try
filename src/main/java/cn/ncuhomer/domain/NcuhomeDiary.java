@@ -2,6 +2,7 @@ package cn.ncuhomer.domain;
 
 
 /**
+ * 家园志实体类
  * Created by luojingyu on 17-7-5.
  */
 public class NcuhomeDiary {

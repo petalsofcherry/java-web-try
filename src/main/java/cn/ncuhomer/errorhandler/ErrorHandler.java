@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
+ * 统一错误处理
  * Created by luojingyu on 17-7-5.
  */
 @ControllerAdvice

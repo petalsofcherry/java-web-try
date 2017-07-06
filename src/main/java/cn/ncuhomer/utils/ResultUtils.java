@@ -3,6 +3,7 @@ package cn.ncuhomer.utils;
 import cn.ncuhomer.domain.Result;
 
 /**
+ * 用于统一结果格式
  * Created by luojingyu on 17-7-5.
  */
 public class ResultUtils {

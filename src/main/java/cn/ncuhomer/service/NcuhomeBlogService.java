@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 /**
+ * 获得图片地址以及博客网址并返回
  * Created by luojingyu on 17-7-5.
  */
 
@@ -23,6 +24,7 @@ public class NcuhomeBlogService {
         for (NcuhomeBlog nchomeblog: preResult) {
             nchomeblog.setCover(getCover(nchomeblog.getCover()));
             nchomeblog.setUrl(getUrl(nchomeblog.getUrl()));
+            nchomeblog.setTime(nchomeblog.getTime().substring(0,19));
         }
         return preResult;
     }

@@ -17,6 +17,7 @@ import javax.validation.constraints.NotNull;
 import java.lang.invoke.MethodHandles;
 
 /**
+ * 用来获取相应的数据源
  * Created by luojingyu on 17-7-5.
  */
 @Configuration

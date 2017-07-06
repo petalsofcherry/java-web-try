@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 /**
+ * 家园志路由
  * Created by luojingyu on 17-7-5.
  */
 @RestController

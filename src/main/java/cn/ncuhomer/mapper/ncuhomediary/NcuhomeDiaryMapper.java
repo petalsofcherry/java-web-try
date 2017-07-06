@@ -9,6 +9,7 @@ import org.apache.ibatis.annotations.Select;
 import java.util.List;
 
 /**
+ * 家园志映射文件
  * Created by luojingyu on 17-7-5.
  */
 @Mapper

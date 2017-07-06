@@ -4,6 +4,7 @@ import cn.ncuhomer.domain.NcuhomeBlogUser;
 import org.apache.ibatis.annotations.*;
 
 /**
+ * 博客用户映射文件
  * Created by luojingyu on 17-7-6.
  */
 @Mapper

@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 /**
+ * 博客路由
  * Created by luojingyu on 17-7-5.
  */
 @RestController
